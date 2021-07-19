@@ -7,7 +7,8 @@
     <title>Rule of Thumb</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/previous-rulings.css">
+    <link rel="stylesheet" href="css/previous-rulings.css" media="(max-width: 767px)">
+    <link rel="stylesheet" href="css/tablet-desktop.css" media="(min-width: 768px)">
 </head>
 <body>
     <nav class="nav" role="navigation">
@@ -101,9 +102,18 @@
         <main role="main">
             <!-- Start: Implementation -->
             <section class="previous-rulings">
-                <!-- Section title -->
-                <h2 class="previous-rulings--title">Previous Rulings</h2>
-                <!-- Seection container -->
+                <!-- Title and custom select menu-->
+                <div class="previous-rulings__header">
+                    <h2 class="previous-rulings--title">Previous Rulings</h2>
+                    <div class="custom-select" >
+                        <select>
+                            <option value="">List</option>
+                            <option value="">Grid</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>
+                </div>
+                <!-- Cards container -->
                 <section class="previous-rulings-main-container">
                 <!-- Cards -->
                     <!-- Kanye West -->
