@@ -2,7 +2,7 @@
 /* VOTING CARDS SECTION */
 
 main[role="main"] {
-    padding: 0 1rem;
+    padding: 0 0rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -15,7 +15,7 @@ main h4 {
 }
 
 main h2 {
-    margin: 0 0 0rem;
+    padding-left: 1rem;
     font-size: 2rem;
 }
 
@@ -26,10 +26,101 @@ main h3 {
     color: var(--color-white);
 }
 
+
 .previous-rulings-main-container {
     width: 100%;
     min-width: 320px;
     margin-top: 1rem;
+    display: flex;
+    padding-left: 1rem;
+    gap: 10px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+#Kanye {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 320px;
+    max-width: 100px;
+    height: 300px;
+    padding: 0;
+    background:
+        1vw 0/85vw no-repeat url('../assets/img/kanye@2x.png');
+    background-position: center;
+    background-position-y: 0%;
+}
+
+#Mark {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 320px;
+    max-width: 100px;
+    height: 300px;
+    padding: 0;
+    background:
+        1vw 0/85vw no-repeat url('../assets/img/mark@2x.png');
+    background-position: center;
+    background-position-y: 0%;
+}
+
+#Cristina {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 320px;
+    max-width: 100px;
+    height: 300px;
+    padding: 0;
+    background:
+        1vw 0/85vw no-repeat url('../assets/img/cristina@2x.png');
+    background-position: center;
+    background-position-y: 0%;
+}
+
+#Malala {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 320px;
+    max-width: 100px;
+    height: 300px;
+    padding: 0;
+    background:
+        1vw 0/85vw no-repeat url('../assets/img/malala@2x.png');
+    background-position: center;
+    background-position-y: 0%;
+}
+
+#Elon {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 320px;
+    max-width: 100px;
+    height: 300px;
+    padding: 0;
+    background:
+        1vw 0/85vw no-repeat url('../assets/img/elon@2x.png');
+    background-position: center;
+    background-position-y: 0%;
+}
+
+#Greta {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 320px;
+    max-width: 100px;
+    height: 300px;
+    padding: 0;
+    background:
+        1vw 0/85vw no-repeat url('../assets/img/greta@2x.png');
+    background-position: center;
+    background-position-y: 0%;
 }
 
 .voting-card__content {
@@ -51,19 +142,6 @@ main h3 {
     margin-top: 0.1rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-}
-
-.previous-rulings__voting-card {
-    position: relative;
-    width: 70%;
-    min-width: 320px;
-    max-width: 100px;
-    height: 300px;
-    padding: 0;
-    background:
-        1vw 0/85vw no-repeat url('../assets/img/kanye@2x.png');
-    background-position: center;
-    background-position-y: 0%;
 }
 
 .voting-card__desc {
@@ -114,7 +192,6 @@ main h3 {
     vertical-align: middle;
     padding: 0;
 }
-
 
 .gauge-bar {
     display: flex;
