@@ -1,0 +1,174 @@
+
+/* VOTING CARDS SECTION */
+
+main[role="main"] {
+    padding: 0 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+main h2,
+main h3,
+main h4 {
+    color: var(--color-dark-gray);
+    font-weight: 300;
+}
+
+main h2 {
+    margin: 0 0 0rem;
+    font-size: 2rem;
+}
+
+main h3 {
+    margin: 0;
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: var(--color-white);
+}
+
+.previous-rulings-main-container {
+    width: 100%;
+    min-width: 320px;
+    margin-top: 1rem;
+}
+
+.voting-card__content {
+    padding-top: 8.2rem;
+}
+.voting-card__title {
+    display: flex;|
+}
+
+.voting-card__title > .icon-button {
+    width: 10%;
+    height: 2.75rem;
+    margin-top: 0.2rem;
+    margin-left: 0.05rem;
+}
+
+.voting-card__title > .icon-button > img {
+    width: 1.5rem;
+    margin-top: 0.1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.previous-rulings__voting-card {
+    position: relative;
+    width: 70%;
+    min-width: 320px;
+    max-width: 100px;
+    height: 300px;
+    padding: 0;
+    background:
+        1vw 0/85vw no-repeat url('../assets/img/kanye@2x.png');
+    background-position: center;
+    background-position-y: 0%;
+}
+
+.voting-card__desc {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 10.5rem;
+    margin: 1rem 0;
+    -webkit-box-orient: vertical;
+    font-size: 1.11rem;
+    font-weight: 400;
+    -webkit-line-clamp: 6;
+    text-overflow: ellipsis;
+    color: var(--color-white);
+    margin-left: 3rem;
+}
+
+.voting-card__time-info {
+    margin-left: 11rem;
+    color: var(--color-white);
+    font-weight: 400;
+}
+
+.voting-card__buttons {
+    display: flex;
+    margin: 0.5rem -8rem 0.5rem;
+    padding-left: 17rem;
+    align-items: center;
+}
+
+.voting-card__buttons > .icon-button {
+    width: 11%;
+    height: 2.75rem;
+    margin-right: 0.75rem;
+}
+
+.voting-card__buttons > .icon-button > img {
+    max-width: 1.5rem;
+}
+
+.vote-button {
+    background-color: rgba(0,0,0,0.7);
+    color: var(--color-white);
+    border-color: var(--color-white);
+    width: 8rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+}
+
+
+.gauge-bar {
+    display: flex;
+    margin: auto;
+    margin-left: 0.10rem;
+    opacity: 0.9;
+}
+
+.gauge-bar-left {
+    width: 50%;
+    height: 2.6rem;
+    display: flex;
+}
+
+.gauge-bar-left img {
+    max-width: 1.25rem;
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+}
+
+.gauge-bar-left h4 {
+    margin: 0.4rem;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+    font-weight: 400;
+
+}
+
+.gauge-bar-right {
+    width: 50%;
+    height: 2.6rem;
+    display: flex;
+}
+
+.gauge-bar-right h4 {
+    margin: 0.4rem;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    padding: 0px;
+    font-weight: 400;
+    margin-left: 7.9rem;
+}
+
+.gauge-bar-right img {
+    max-width: 1.25rem;
+    margin: 0.5rem 0.5rem 0.5rem 0rem;
+}
+
+.gauge-bar-left[aria-label="thumbs up"] {
+    background-color: rgba(var(--color-green-positive), .8);
+}
+
+.gauge-bar-right[aria-label="thumbs down"] {
+    background-color: rgba(var(--color-yellow-negative), .8);
+}
