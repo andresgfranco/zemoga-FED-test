@@ -8,11 +8,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)">
-    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 768px)">
-    <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1100px)">
+    <link rel="stylesheet" href="css/tablet-grid-view.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="css/desktop-grid-view.css" media="(min-width: 1100px)">
     <link rel="stylesheet" href="css/tablet-list-view.css" media="(min-width: 768px)">
     <link rel="stylesheet" href="css/desktop-list-view.css" media="(min-width: 1100px)">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
     <nav class="nav" role="navigation">
@@ -109,23 +108,27 @@
                 <!-- Title and custom select menu-->
                 <div class="previous-rulings__header">
                     <h2 class="previous-rulings--title">Previous Rulings</h2>
-                    <div class="custom-select">
-                        <ul>
-                            <li >
+                    <di class="custom-select">
+                        <div class="view-button">
+                            <h5>View &#9660;</h5>
+                        </div>
+
+                        <ul class="view-selection">
+                            <li>
                                 <button class="list-button" onclick="listView()">List</button>
                             </li>
                             <li>
                                 <button class="grid-button" onclick="gridView()">Grid</button>
                             </li>
                         </ul>
-                    </div>
+                    </di>
                 </div>
                 <!-- Cards container -->
                 <div class="grid-view">
                     <section class="previous-rulings-main-container">
                         <!-- Cards -->
                         <!-- Kanye West -->
-                        <div id="Kanye" class="previous-rulings__voting-card">
+                        <div id="kanye" class="previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="voting-card__content">
@@ -140,19 +143,25 @@
                                 <p class="voting-card__desc">
                                     Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
                                 </p>
-                                <p class="voting-card__time-info">
+                                <p id="kanye-voting-card__time-info" class="voting-card__time-info">
                                     1 month ago in Entertainment
+                                </p>
+                                <p id="kanye-thanks-for-your-vote" class="voting-card__time-info" style="display: none;">
+                                    Thanks for your vote!
                                 </p>
                                 <!-- Voting buttons -->
                                 <div class="voting-card__buttons">
-                                    <button class="icon-button" aria-label="thumbs up">
+                                    <button id="up-kanye" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs up" >
                                         <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                     </button>
-                                    <button class="icon-button" aria-label="thumbs down">
+                                    <button id="do-kanye" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs down">
                                         <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                     </button>
-                                    <button class="vote-button" aria-label="Vote now">
+                                    <button id="kanye-vote" onclick="vote(this.id)" class="vote-button" aria-label="Vote now" type="button" disabled>
                                         Vote now
+                                    </button>
+                                    <button id="kanye-vote-again" onclick="voteAgain(this.id)" style="display: none; margin-left: 7rem;" class="vote-button" aria-label="Vote now">
+                                        Vote again
                                     </button>
                                 </div>
                             </div>
@@ -169,13 +178,13 @@
                             </div>
                         </div>
                         <!-- Mark Zuckerberg -->
-                        <div id="Mark" class="previous-rulings__voting-card">
-                        <div class="voting-card__background"></div>
-                        <!-- text and buttons content -->
-                        <div class="voting-card__content">
-                            <div class="voting-card__title">
-                                <div class="icon-button" aria-label="thumbs down">
-                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                        <div id="mark" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
+                                <div class="voting-card__title">
+                                    <div class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                     </div>
                                     <div>
                                         <h3>Mark Zuckerberg</h3>
@@ -184,19 +193,27 @@
                                 <p class="voting-card__desc">
                                     Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
                                 </p>
-                                <p class="voting-card__time-info">
+                                <p id="mark-voting-card__time-info" class="voting-card__time-info">
                                     1 month ago in Entertainment
+                                </p>
+                                <p id="mark-thanks-for-your-vote" class="voting-card__time-info" style="display: none;">
+                                    Thanks for your vote!
                                 </p>
                                 <!-- Voting buttons -->
                                 <div class="voting-card__buttons">
-                                    <button class="icon-button" aria-label="thumbs up">
+                                    <button id="up-mark" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs up">
                                         <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                     </button>
-                                    <button class="icon-button" aria-label="thumbs down">
+                                    <button id="do-mark" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs down">
                                         <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                     </button>
-                                    <button class="vote-button" aria-label="Vote now">
+                                    <button id="mark-vote" onclick="vote(this.id)" class="vote-button" aria-label="Vote now" type="button"
+                                        disabled>
                                         Vote now
+                                    </button>
+                                    <button id="mark-vote-again" onclick="voteAgain(this.id)" style="display: none; margin-left: 7rem;"
+                                        class="vote-button" aria-label="Vote now">
+                                        Vote again
                                     </button>
                                 </div>
                             </div>
@@ -213,7 +230,7 @@
                             </div>
                         </div>
                         <!-- Cristina Fernandez -->
-                        <div id="Cristina" class="previous-rulings__voting-card">
+                        <div id="cristina" class="previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="voting-card__content">
@@ -228,19 +245,27 @@
                                 <p class="voting-card__desc">
                                     Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
                                 </p>
-                                <p class="voting-card__time-info">
+                                <p id="cristina-voting-card__time-info" class="voting-card__time-info">
                                     1 month ago in Entertainment
+                                </p>
+                                <p id="cristina-thanks-for-your-vote" class="voting-card__time-info" style="display: none;">
+                                    Thanks for your vote!
                                 </p>
                                 <!-- Voting buttons -->
                                 <div class="voting-card__buttons">
-                                    <button class="icon-button" aria-label="thumbs up">
+                                    <button id="up-cristina" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs up">
                                         <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                     </button>
-                                    <button class="icon-button" aria-label="thumbs down">
+                                    <button id="do-cristina" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs down">
                                         <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                     </button>
-                                    <button class="vote-button" aria-label="Vote now">
+                                    <button id="cristina-vote" onclick="vote(this.id)" class="vote-button" aria-label="Vote now" type="button"
+                                        disabled>
                                         Vote now
+                                    </button>
+                                    <button id="cristina-vote-again" onclick="voteAgain(this.id)" style="display: none; margin-left: 7rem;"
+                                        class="vote-button" aria-label="Vote now">
+                                        Vote again
                                     </button>
                                 </div>
                             </div>
@@ -257,7 +282,7 @@
                             </div>
                         </div>
                         <!-- Malala Yousafzai -->
-                        <div id="Malala" class="previous-rulings__voting-card">
+                        <div id="malala" class="previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="voting-card__content">
@@ -272,19 +297,27 @@
                                 <p class="voting-card__desc">
                                     Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
                                 </p>
-                                <p class="voting-card__time-info">
+                                <p id="malala-voting-card__time-info" class="voting-card__time-info">
                                     1 month ago in Entertainment
+                                </p>
+                                <p id="malala-thanks-for-your-vote" class="voting-card__time-info" style="display: none;">
+                                    Thanks for your vote!
                                 </p>
                                 <!-- Voting buttons -->
                                 <div class="voting-card__buttons">
-                                    <button class="icon-button" aria-label="thumbs up">
+                                    <button id="up-malala" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs up">
                                         <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                     </button>
-                                    <button class="icon-button" aria-label="thumbs down">
+                                    <button id="do-malala" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs down">
                                         <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                     </button>
-                                    <button class="vote-button" aria-label="Vote now">
+                                    <button id="malala-vote" onclick="vote(this.id)" class="vote-button" aria-label="Vote now" type="button"
+                                        disabled>
                                         Vote now
+                                    </button>
+                                    <button id="malala-vote-again" onclick="voteAgain(this.id)" style="display: none; margin-left: 7rem;"
+                                        class="vote-button" aria-label="Vote now">
+                                        Vote again
                                     </button>
                                 </div>
                             </div>
@@ -301,7 +334,7 @@
                             </div>
                         </div>
                         <!-- Elon Musk -->
-                        <div id="Elon" class="previous-rulings__voting-card">
+                        <div id="elon" class="previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="voting-card__content">
@@ -316,19 +349,27 @@
                                 <p class="voting-card__desc">
                                     Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
                                 </p>
-                                <p class="voting-card__time-info">
+                                <p id="elon-voting-card__time-info" class="voting-card__time-info">
                                     1 month ago in Entertainment
+                                </p>
+                                <p id="elon-thanks-for-your-vote" class="voting-card__time-info" style="display: none;">
+                                    Thanks for your vote!
                                 </p>
                                 <!-- Voting buttons -->
                                 <div class="voting-card__buttons">
-                                    <button class="icon-button" aria-label="thumbs up">
+                                    <button id="up-elon" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs up">
                                         <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                     </button>
-                                    <button class="icon-button" aria-label="thumbs down">
+                                    <button id="do-elon" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs down">
                                         <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                     </button>
-                                    <button class="vote-button" aria-label="Vote now">
+                                    <button id="elon-vote" onclick="vote(this.id)" class="vote-button" aria-label="Vote now" type="button"
+                                        disabled>
                                         Vote now
+                                    </button>
+                                    <button id="elon-vote-again" onclick="voteAgain(this.id)" style="display: none; margin-left: 7rem;"
+                                        class="vote-button" aria-label="Vote now">
+                                        Vote again
                                     </button>
                                 </div>
                             </div>
@@ -341,12 +382,12 @@
                                 <div class="gauge-bar-right" aria-label="thumbs down">
                                     <h4>50%</h4>
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </div>
                             </div>
                         </div>
-                        </div>
                         <!-- Greta Thunberg -->
-                        <div id="Greta" class="previous-rulings__voting-card">
-                        <div class="voting-card__background"></div>
+                        <div id="greta" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="voting-card__content">
                                 <div class="voting-card__title">
@@ -360,19 +401,27 @@
                                 <p class="voting-card__desc">
                                     Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
                                 </p>
-                                <p class="voting-card__time-info">
+                                <p id="greta-voting-card__time-info" class="voting-card__time-info">
                                     1 month ago in Entertainment
+                                </p>
+                                <p id="greta-thanks-for-your-vote" class="voting-card__time-info" style="display: none;">
+                                    Thanks for your vote!
                                 </p>
                                 <!-- Voting buttons -->
                                 <div class="voting-card__buttons">
-                                    <button class="icon-button" aria-label="thumbs up">
+                                    <button id="up-greta" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs up">
                                         <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                     </button>
-                                    <button class="icon-button" aria-label="thumbs down">
+                                    <button id="do-greta" onclick="preVote(this.id)" class="icon-button" aria-label="thumbs down">
                                         <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                     </button>
-                                    <button class="vote-button" aria-label="Vote now">
+                                    <button id="greta-vote" onclick="vote(this.id)" class="vote-button" aria-label="Vote now" type="button"
+                                        disabled>
                                         Vote now
+                                    </button>
+                                    <button id="greta-vote-again" onclick="voteAgain(this.id)" style="display: none; margin-left: 7rem;"
+                                        class="vote-button" aria-label="Vote now">
+                                        Vote again
                                     </button>
                                 </div>
                             </div>
@@ -394,7 +443,7 @@
                     <section class="list-previous-rulings-main-container">
                         <!-- Cards -->
                         <!-- Kanye West -->
-                        <div id="Kanye_list" class="list-previous-rulings__voting-card">
+                        <div id="kanye_list" class="list-previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="list-voting-card__content">
@@ -440,7 +489,7 @@
                             </div>
                         </div>
                         <!-- Mark Zuckerberg -->
-                        <div id="Mark_list" class="list-previous-rulings__voting-card">
+                        <div id="mark_list" class="list-previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="list-voting-card__content">
@@ -486,7 +535,7 @@
                             </div>
                         </div>
                         <!-- Cristina Fernandez -->
-                        <div id="Cristina_list" class="list-previous-rulings__voting-card">
+                        <div id="cristina_list" class="list-previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="list-voting-card__content">
@@ -532,7 +581,7 @@
                             </div>
                         </div>
                         <!-- Malala Yousafzai -->
-                        <div id="Malala_list" class="list-previous-rulings__voting-card">
+                        <div id="malala_list" class="list-previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="list-voting-card__content">
@@ -578,7 +627,7 @@
                             </div>
                         </div>
                         <!-- Elon Musk -->
-                        <div id="Elon_list" class="list-previous-rulings__voting-card">
+                        <div id="elon_list" class="list-previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="list-voting-card__content">
@@ -624,7 +673,7 @@
                             </div>
                         </div>
                         <!-- Greta Thunberg -->
-                        <div id="Greta_list" class="list-previous-rulings__voting-card">
+                        <div id="greta_list" class="list-previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
                             <!-- text and buttons content -->
                             <div class="list-voting-card__content">

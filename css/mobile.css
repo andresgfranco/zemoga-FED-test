@@ -46,7 +46,7 @@ main h3 {
     scroll-snap-type: x proximity;
 }
 
-#Kanye {
+#kanye {
     position: relative;
     scroll-snap-align: center;
     width: 70%;
@@ -62,7 +62,7 @@ main h3 {
     background-position-y: 0%;
 }
 
-#Mark {
+#mark {
     position: relative;
     scroll-snap-align: center;
     width: 70%;
@@ -77,7 +77,7 @@ main h3 {
     background-position-y: 0%;
 }
 
-#Cristina {
+#cristina {
     position: relative;
     scroll-snap-align: center;
     width: 70%;
@@ -92,7 +92,7 @@ main h3 {
     background-position-y: 0%;
 }
 
-#Malala {
+#malala {
     position: relative;
     scroll-snap-align: center;
     width: 70%;
@@ -107,7 +107,7 @@ main h3 {
     background-position-y: 0%;
 }
 
-#Elon {
+#elon {
     position: relative;
     scroll-snap-align: center;
     width: 70%;
@@ -122,7 +122,7 @@ main h3 {
     background-position-y: 0%;
 }
 
-#Greta {
+#greta {
     position: relative;
     scroll-snap-align: center;
     width: 70%;
@@ -149,6 +149,7 @@ main h3 {
     height: 2.75rem;
     margin-top: 0.2rem;
     margin-left: 0.05rem;
+    background-color: rgba(var(--color-yellow-negative));
 }
 
 .voting-card__title > .icon-button > img {
@@ -198,7 +199,6 @@ main h3 {
 .vote-button {
     background-color: rgba(0,0,0,0.7);
     color: var(--color-white);
-    border-color: var(--color-white);
     width: 8rem;
     height: 3.5rem;
     font-size: 1.3rem;
