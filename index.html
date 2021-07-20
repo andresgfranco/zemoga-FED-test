@@ -7,10 +7,11 @@
     <title>Rule of Thumb</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/previous-rulings.css" media="(max-width: 767px)">
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)">
     <link rel="stylesheet" href="css/tablet.css" media="(min-width: 768px)">
     <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1100px)">
-    <script type="text/javascript" src="/js/dropdown.js"></script>
+    <link rel="stylesheet" href="css/tablet-list-view.css" media="(min-width: 768px)">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
     <nav class="nav" role="navigation">
@@ -42,11 +43,11 @@
     </nav>
     <header class="hero">
         <img
-            class="hero__background"
-            srcset="assets/img/pope-francis.png 750w, assets/img/pope-francis.@2x.png 1440w"
-            sizes="(min-width: 750px) 1440px, 100vw"
-            src="assets/img/pope-francis.png"
-            alt="Pope Francis">
+        class="hero__background"
+        srcset="assets/img/pope-francis.png 750w, assets/img/pope-francis.@2x.png 1440w"
+        sizes="(min-width: 750px) 1440px, 100vw"
+        src="assets/img/pope-francis.png"
+        alt="Pope Francis">
         <div class="max-centered">
             <div class="hero__featured-card">
                 <div class="featured-card__glass-background"></div>
@@ -108,337 +109,604 @@
                 <div class="previous-rulings__header">
                     <h2 class="previous-rulings--title">Previous Rulings</h2>
                     <div class="custom-select">
-                        <select>
-                            <option value="list">List</option>
-                            <option value="grid">Grid</option>
-                        </select>
-                        <span class="custom-arrow"></span>
+                        <ul>
+                            <li >
+                                <button class="list-button" onclick="listView()">List</button>
+                            </li>
+                            <li>
+                                <button class="grid-button" onclick="gridView()">Grid</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!-- Cards container -->
-                <section class="previous-rulings-main-container">
-                <!-- Cards -->
-                    <!-- Kanye West -->
-                    <div id="Kanye" class="previous-rulings__voting-card">
+                <div class="grid-view">
+                    <section class="previous-rulings-main-container">
+                        <!-- Cards -->
+                        <!-- Kanye West -->
+                        <div id="Kanye" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
+                                <div class="voting-card__title">
+                                    <div class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </div>
+                                    <div>
+                                        <h3>Kanye West</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
+                                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mark Zuckerberg -->
+                        <div id="Mark" class="previous-rulings__voting-card">
                         <div class="voting-card__background"></div>
                         <!-- text and buttons content -->
                         <div class="voting-card__content">
                             <div class="voting-card__title">
                                 <div class="icon-button" aria-label="thumbs down">
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </div>
+                                    <div>
+                                        <h3>Mark Zuckerberg</h3>
+                                    </div>
                                 </div>
-                                <div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
+                                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cristina Fernandez -->
+                        <div id="Cristina" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
+                                <div class="voting-card__title">
+                                    <div class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </div>
+                                    <div>
+                                        <h3>Cristina Fernandez</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
+                                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Malala Yousafzai -->
+                        <div id="Malala" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
+                                <div class="voting-card__title">
+                                    <div class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </div>
+                                    <div>
+                                        <h3>Malala Yousafzai</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
+                                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Elon Musk -->
+                        <div id="Elon" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
+                                <div class="voting-card__title">
+                                    <div class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </div>
+                                    <div>
+                                        <h3>Elon Musk</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
+                                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                            </div>
+                        </div>
+                        </div>
+                        <!-- Greta Thunberg -->
+                        <div id="Greta" class="previous-rulings__voting-card">
+                        <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
+                                <div class="voting-card__title">
+                                    <div class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </div>
+                                    <div>
+                                        <h3>Greta Thunberg</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
+                                    <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="list-view">
+                    <section class="previous-rulings-main-container">
+                        <!-- Cards -->
+                        <!-- Kanye West -->
+                        <div id="Kanye_list" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
+                                <div class="icon-button" aria-label="thumbs down">
+                                    <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                </div>
+                                <div class="voting-card__title">
                                     <h3>Kanye West</h3>
+                                    <p class="voting-card__desc">
+                                        Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                    </p>
+                                </div>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <p class="voting-card__time-info">
+                                        1 month ago in Entertainment
+                                    </p>
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
                                 </div>
                             </div>
-                            <p class="voting-card__desc">
-                                Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
-                            </p>
-                            <p class="voting-card__time-info">
-                                1 month ago in Entertainment
-                            </p>
-                            <!-- Voting buttons -->
-                            <div class="voting-card__buttons">
-                                <button class="icon-button" aria-label="thumbs up">
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                </button>
-                                <button class="icon-button" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </button>
-                                <button class="vote-button" aria-label="Vote now">
-                                    Vote now
-                                </button>
+                                </div>
                             </div>
                         </div>
-                        <!-- Gauge bar -->
-                        <div class="gauge-bar">
-                            <div class="gauge-bar-left" aria-label="thumbs up">
-                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                <h4>50%</h4>
-                            </div>
-                            <div class="gauge-bar-right" aria-label="thumbs down">
-                                <h4>50%</h4>
-                                <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                            </d>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Mark Zuckerberg -->
-                    <div id="Mark" class="previous-rulings__voting-card">
-                        <div class="voting-card__background"></div>
-                        <!-- text and buttons content -->
-                        <div class="voting-card__content">
-                            <div class="voting-card__title">
+                        <!-- Mark Zuckerberg -->
+                        <div id="Mark_list" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
                                 <div class="icon-button" aria-label="thumbs down">
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                 </div>
-                                <div>
-                                    <h3>Mark Zuckerberg</h3>
+                                <div class="voting-card__title">
+                                    <div>
+                                        <h3>Mark Zuckerberg</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
                                 </div>
                             </div>
-                            <p class="voting-card__desc">
-                                Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
-                            </p>
-                            <p class="voting-card__time-info">
-                                1 month ago in Entertainment
-                            </p>
-                            <!-- Voting buttons -->
-                            <div class="voting-card__buttons">
-                                <button class="icon-button" aria-label="thumbs up">
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                </button>
-                                <button class="icon-button" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </button>
-                                <button class="vote-button" aria-label="Vote now">
-                                    Vote now
-                                </button>
+                                </div>
                             </div>
                         </div>
-                        <!-- Gauge bar -->
-                        <div class="gauge-bar">
-                            <div class="gauge-bar-left" aria-label="thumbs up">
-                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                <h4>50%</h4>
-                            </div>
-                            <div class="gauge-bar-right" aria-label="thumbs down">
-                                <h4>50%</h4>
-                                <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </d>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Cristina Fernandez -->
-                    <div id="Cristina" class="previous-rulings__voting-card">
-                        <div class="voting-card__background"></div>
-                        <!-- text and buttons content -->
-                        <div class="voting-card__content">
-                            <div class="voting-card__title">
+                        <!-- Cristina Fernandez -->
+                        <div id="Cristina_list" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
                                 <div class="icon-button" aria-label="thumbs down">
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                 </div>
-                                <div>
-                                    <h3>Cristina Fernandez</h3>
+                                <div class="voting-card__title">
+                                    <div>
+                                        <h3>Cristina Fernandez</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
                                 </div>
                             </div>
-                            <p class="voting-card__desc">
-                                Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
-                            </p>
-                            <p class="voting-card__time-info">
-                                1 month ago in Entertainment
-                            </p>
-                            <!-- Voting buttons -->
-                            <div class="voting-card__buttons">
-                                <button class="icon-button" aria-label="thumbs up">
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                </button>
-                                <button class="icon-button" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </button>
-                                <button class="vote-button" aria-label="Vote now">
-                                    Vote now
-                                </button>
+                                </div>
                             </div>
                         </div>
-                        <!-- Gauge bar -->
-                        <div class="gauge-bar">
-                            <div class="gauge-bar-left" aria-label="thumbs up">
-                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                <h4>50%</h4>
-                            </div>
-                            <div class="gauge-bar-right" aria-label="thumbs down">
-                                <h4>50%</h4>
-                                <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </d>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Malala Yousafzai -->
-                    <div id="Malala" class="previous-rulings__voting-card">
-                        <div class="voting-card__background"></div>
-                        <!-- text and buttons content -->
-                        <div class="voting-card__content">
-                            <div class="voting-card__title">
+                        <!-- Malala Yousafzai -->
+                        <div id="Malala_list" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
                                 <div class="icon-button" aria-label="thumbs down">
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                 </div>
-                                <div>
-                                    <h3>Malala Yousafzai</h3>
+                                <div class="voting-card__title">
+                                    <div>
+                                        <h3>Malala Yousafzai</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
                                 </div>
                             </div>
-                            <p class="voting-card__desc">
-                                Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
-                            </p>
-                            <p class="voting-card__time-info">
-                                1 month ago in Entertainment
-                            </p>
-                            <!-- Voting buttons -->
-                            <div class="voting-card__buttons">
-                                <button class="icon-button" aria-label="thumbs up">
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                </button>
-                                <button class="icon-button" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </button>
-                                <button class="vote-button" aria-label="Vote now">
-                                    Vote now
-                                </button>
+                                </div>
                             </div>
                         </div>
-                        <!-- Gauge bar -->
-                        <div class="gauge-bar">
-                            <div class="gauge-bar-left" aria-label="thumbs up">
-                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                <h4>50%</h4>
-                            </div>
-                            <div class="gauge-bar-right" aria-label="thumbs down">
-                                <h4>50%</h4>
-                                <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </d>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Elon Musk -->
-                    <div id="Elon" class="previous-rulings__voting-card">
-                        <div class="voting-card__background"></div>
-                        <!-- text and buttons content -->
-                        <div class="voting-card__content">
-                            <div class="voting-card__title">
+                        <!-- Elon Musk -->
+                        <div id="Elon_list" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
                                 <div class="icon-button" aria-label="thumbs down">
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                 </div>
-                                <div>
-                                    <h3>Elon Musk</h3>
+                                <div class="voting-card__title">
+                                    <div>
+                                        <h3>Elon Musk</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
                                 </div>
                             </div>
-                            <p class="voting-card__desc">
-                                Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
-                            </p>
-                            <p class="voting-card__time-info">
-                                1 month ago in Entertainment
-                            </p>
-                            <!-- Voting buttons -->
-                            <div class="voting-card__buttons">
-                                <button class="icon-button" aria-label="thumbs up">
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                </button>
-                                <button class="icon-button" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </button>
-                                <button class="vote-button" aria-label="Vote now">
-                                    Vote now
-                                </button>
+                                </div>
                             </div>
                         </div>
-                        <!-- Gauge bar -->
-                        <div class="gauge-bar">
-                            <div class="gauge-bar-left" aria-label="thumbs up">
-                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                <h4>50%</h4>
-                            </div>
-                            <div class="gauge-bar-right" aria-label="thumbs down">
-                                <h4>50%</h4>
-                                <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </d>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Greta Thunberg -->
-                    <div id="Greta" class="previous-rulings__voting-card">
-                        <div class="voting-card__background"></div>
-                        <!-- text and buttons content -->
-                        <div class="voting-card__content">
-                            <div class="voting-card__title">
+                        <!-- Greta Thunberg -->
+                        <div id="Greta_list" class="previous-rulings__voting-card">
+                            <div class="voting-card__background"></div>
+                            <!-- text and buttons content -->
+                            <div class="voting-card__content">
                                 <div class="icon-button" aria-label="thumbs down">
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                 </div>
-                                <div>
-                                    <h3>Greta Thunberg</h3>
+                                <div class="voting-card__title">
+                                    <div>
+                                        <h3>Greta Thunberg</h3>
+                                    </div>
+                                </div>
+                                <p class="voting-card__desc">
+                                    Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
+                                </p>
+                                <p class="voting-card__time-info">
+                                    1 month ago in Entertainment
+                                </p>
+                                <!-- Voting buttons -->
+                                <div class="voting-card__buttons">
+                                    <button class="icon-button" aria-label="thumbs up">
+                                        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+                                    </button>
+                                    <button class="icon-button" aria-label="thumbs down">
+                                        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+                                    </button>
+                                    <button class="vote-button" aria-label="Vote now">
+                                        Vote now
+                                    </button>
                                 </div>
                             </div>
-                            <p class="voting-card__desc">
-                                Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
-                            </p>
-                            <p class="voting-card__time-info">
-                                1 month ago in Entertainment
-                            </p>
-                            <!-- Voting buttons -->
-                            <div class="voting-card__buttons">
-                                <button class="icon-button" aria-label="thumbs up">
+                            <!-- Gauge bar -->
+                            <div class="gauge-bar">
+                                <div class="gauge-bar-left" aria-label="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                </button>
-                                <button class="icon-button" aria-label="thumbs down">
+                                    <h4>50%</h4>
+                                </div>
+                                <div class="gauge-bar-right" aria-label="thumbs down">
+                                    <h4>50%</h4>
                                     <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </button>
-                                <button class="vote-button" aria-label="Vote now">
-                                    Vote now
-                                </button>
+                                </div>
                             </div>
                         </div>
-                        <!-- Gauge bar -->
-                        <div class="gauge-bar">
-                            <div class="gauge-bar-left" aria-label="thumbs up">
-                                <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
-                                <h4>50%</h4>
-                            </div>
-                            <div class="gauge-bar-right" aria-label="thumbs down">
-                                <h4>50%</h4>
-                                <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
-                                </d>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </section>
             <!-- End: Implementation -->
         </main>
         <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
             <img
-                srcset="assets/img/bg-people.png 750w, assets/img/bg-people.@2x.png 1440w"
-                sizes="(min-width: 750px) 1440px, 100vw"
+            srcset="assets/img/bg-people.png 750w, assets/img/bg-people.@2x.png 1440w"
+            sizes="(min-width: 750px) 1440px, 100vw"
                 class="banner__background" src="assets/img/bg-people.png"
                 alt=""
                 role="none">
-            <div class="banner__left">
-                <h2 class="banner__heading">Is there anyone else you would want us to add?</h2>
-            </div>
-            <div class="banner__right">
-                <button class="banner__cta">
-                    Submit a name
-                </button>
-            </div>
-        </aside>
-        <hr role="separator">
-        <footer class="footer">
-            <div class="footer__links">
-                <ul>
-                    <li>
-                        <a href="#">Terms and Conditions</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer__social">
-                <span>Follow us</span>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M24 1.325v21.35c0 .732-.593 1.325-1.325 1.325H16.56v-9.294h3.12l.467-3.622H16.56V8.771c0-1.048.292-1.763 1.796-1.763h1.918v-3.24a25.663 25.663 0 00-2.795-.143c-2.766 0-4.659 1.688-4.659 4.788v2.671H9.691v3.622h3.128V24H1.325A1.325 1.325 0 010 22.676V1.325A1.325 1.325 0 011.325 0h21.35A1.325 1.325 0 0124 1.325z" fill="#262626" fill-rule="nonzero"/></svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg width="26" height="23" xmlns="http://www.w3.org/2000/svg"><path d="M23.329 6.204c.01.23.01.458.01.687A15.182 15.182 0 01-.008 19.688c.421.05.845.075 1.27.073a10.7 10.7 0 006.627-2.289 5.335 5.335 0 01-4.984-3.704c.798.151 1.62.12 2.404-.094a5.346 5.346 0 01-4.276-5.233v-.073a5.396 5.396 0 002.413.666 5.357 5.357 0 01-1.654-7.127A15.15 15.15 0 0012.79 7.484a5.898 5.898 0 01-.135-1.217 5.336 5.336 0 019.228-3.652 10.612 10.612 0 003.392-1.29 5.368 5.368 0 01-2.351 2.955 10.811 10.811 0 003.07-.843 10.868 10.868 0 01-2.664 2.767z" fill="#262626" fill-rule="nonzero"/></svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-    </div>
-</body>
+                <div class="banner__left">
+                    <h2 class="banner__heading">Is there anyone else you would want us to add?</h2>
+                </div>
+                <div class="banner__right">
+                    <button class="banner__cta">
+                        Submit a name
+                    </button>
+                </div>
+            </aside>
+            <hr role="separator">
+            <footer class="footer">
+                <div class="footer__links">
+                    <ul>
+                        <li>
+                            <a href="#">Terms and Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__social">
+                    <span>Follow us</span>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M24 1.325v21.35c0 .732-.593 1.325-1.325 1.325H16.56v-9.294h3.12l.467-3.622H16.56V8.771c0-1.048.292-1.763 1.796-1.763h1.918v-3.24a25.663 25.663 0 00-2.795-.143c-2.766 0-4.659 1.688-4.659 4.788v2.671H9.691v3.622h3.128V24H1.325A1.325 1.325 0 010 22.676V1.325A1.325 1.325 0 011.325 0h21.35A1.325 1.325 0 0124 1.325z" fill="#262626" fill-rule="nonzero"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg width="26" height="23" xmlns="http://www.w3.org/2000/svg"><path d="M23.329 6.204c.01.23.01.458.01.687A15.182 15.182 0 01-.008 19.688c.421.05.845.075 1.27.073a10.7 10.7 0 006.627-2.289 5.335 5.335 0 01-4.984-3.704c.798.151 1.62.12 2.404-.094a5.346 5.346 0 01-4.276-5.233v-.073a5.396 5.396 0 002.413.666 5.357 5.357 0 01-1.654-7.127A15.15 15.15 0 0012.79 7.484a5.898 5.898 0 01-.135-1.217 5.336 5.336 0 019.228-3.652 10.612 10.612 0 003.392-1.29 5.368 5.368 0 01-2.351 2.955 10.811 10.811 0 003.07-.843 10.868 10.868 0 01-2.664 2.767z" fill="#262626" fill-rule="nonzero"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="/js/main.js"></script>
+    </body>
 </html>

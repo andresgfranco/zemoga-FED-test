@@ -1,172 +1,134 @@
 
-/* VOTING CARDS SECTION */
-
-main[role="main"] {
-    padding: 1rem 1rem 1rem 1rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+.list-view {
+    display: none;
 }
 
-main h2,
-main h3,
-main h4 {
-    color: var(--color-dark-gray);
-    font-weight: 300;
+.list-view .previous-rulings-main-container {
+    width: auto;
+    margin-top: 0rem;
+    display: block;
+    padding-left: 0rem;
 }
 
-main h2 {
-    font-size: 2rem;
+.list-view .previous-rulings__voting-card {
+    margin-bottom: 1rem;
 }
 
-main h3 {
-    margin: 0;
-    font-size: 2.1rem;
-    font-weight: 400;
-    color: var(--color-white);
-}
-
-.previous-rulings__header {
-    display: flex;
-    gap: 28.5rem;
-    align-items: center;
-}
-
-main p {
-    font-size: 0.9rem;
-}
-
-
-/* Dropdown */
-
-select {
-    border: 2px solid black;
-    height: 2rem;
-    width: 10rem;
-    padding: 0em 0em 0em 4em;
-    background: white;
-}
-
-
-/* Dropdown */
-
-
-
-.previous-rulings-main-container {
+#Kanye_list {
+    position: relative;
     width: auto;
     min-width: 350px;
-    margin-top: 0rem;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding-left: 0rem;
-    gap: 1.1rem;
-}
-
-#Kanye {
-    position: relative;
-    width: 70%;
-    min-width: 350px;
-    max-width: 100px;
-    height: 350px;
+    max-width: auto;
+    height: 180px;
     padding: 0;
     background:
         1vw 0/30vw no-repeat url('../assets/img/kanye@2x.png');
-    background-position: center;
-    background-size: 25em;
-    background-position-y: 0%;
+    background-position: left;
+    background-size: 12em;
+    background-position-y: 40%;
+    border: 1px solid red;
 }
 
-#Mark {
+#Mark_list {
     position: relative;
-    width: 70%;
+    width: auto;
     min-width: 350px;
-    max-width: 100px;
-    height: 350px;
+    max-width: auto;
+    height: 180px;
     padding: 0;
     background:
         1vw 0/30vw no-repeat url('../assets/img/mark@2x.png');
-    background-position: center;
-    background-size: 25em;
-    background-position-y: 50%;
+    background-position: left;
+    background-size: 12em;
+    background-position-y: 40%;
+    border: 1px solid red;
 }
 
-#Cristina {
+#Cristina_list {
     position: relative;
-    width: 70%;
+    width: auto;
     min-width: 350px;
-    max-width: 100px;
-    height: 350px;
+    max-width: auto;
+    height: 180px;
     padding: 0;
     background:
         1vw 0/30vw no-repeat url('../assets/img/cristina@2x.png');
-    background-position: center;
-    background-size: 25em;
-    background-position-y: 0%;
+    background-position: left;
+    background-size: 12em;
+    background-position-y: 40%;
+    border: 1px solid red;
 }
 
-#Malala {
+#Malala_list {
     position: relative;
-    width: 70%;
+    width: auto;
     min-width: 350px;
-    max-width: 100px;
-    height: 350px;
+    max-width: auto;
+    height: 180px;
     padding: 0;
     background:
         0vw 0/30vw no-repeat url('../assets/img/malala@2x.png');
-    background-position: center;
-    background-size: 25em;
-    background-position-y: 0%;
+    background-position: left;
+    background-size: 12em;
+    background-position-y: 40%;
+    border: 1px solid red;
 }
 
-#Elon {
+#Elon_list {
     position: relative;
-    width: 70%;
+    width: auto;
     min-width: 350px;
-    max-width: 100px;
-    height: 350px;
+    max-width: auto;
+    height: 180px;
     padding: 0;
     background:
         1vw 0/30vw no-repeat url('../assets/img/elon@2x.png');
-    background-position: center;
-    background-size: 25em;
-    background-position-y: 0%;
+    background-position: left;
+    background-size: 12em;
+    background-position-y: 40%;
+    border: 1px solid red;
 }
 
-#Greta {
+#Greta_list {
     position: relative;
-    width: 70%;
+    width: auto;
     min-width: 350px;
-    max-width: 100px;
-    height: 350px;
+    max-width: auto;
+    height: 180px;
     padding: 0;
     background:
         1vw 0/30vw no-repeat url('../assets/img/greta@2x.png');
-    background-position: center;
-    background-size: 25em;
-    background-position-y: 0%;
+    background-position: left;
+    background-size: 12em;
+    background-position-y: 40%;
+    border: 1px solid red;
 }
 
-.voting-card__content {
-    padding-top: 11.8rem;
-}
-.voting-card__title {
-    display: flex;|
+.list-view .voting-card__content {
+    padding-top: 0rem;
+    display: flex;
 }
 
-.voting-card__title > .icon-button {
+
+.voting-card__content > .icon-button {
     width: 8%;
     height: 1.9rem;
-    margin-top: 0.2rem;
+    margin-top: 0rem;
     margin-left: 0.02rem;
     margin-right: 0.3rem;
 }
 
-.voting-card__title > .icon-button > img {
+.voting-card__content > .icon-button > img {
     width: 1rem;
     margin-top: 0.1rem;
     margin-left: 0.45rem;
 }
 
-.voting-card__desc {
+.list-view .voting-card__title {
+    display: box;
+}
+
+.list-view .voting-card__desc {
     display: -webkit-box;
     overflow: hidden;
     max-height: 10.5rem;
@@ -180,30 +142,30 @@ select {
     margin-left: 2.4rem;
 }
 
-.voting-card__time-info {
+.list-view .voting-card__time-info {
     margin-left: 11rem;
     color: var(--color-white);
     font-weight: 400;
 }
 
-.voting-card__buttons {
+.list-view .voting-card__buttons {
     display: flex;
     margin: 0.5rem -8rem 0.5rem;
     padding-left: 19rem;
     align-items: center;
 }
 
-.voting-card__buttons > .icon-button {
+.list-view .voting-card__buttons > .icon-button {
     width: 10%;
     height: 1.9rem;
     margin-right: 0.75rem;
 }
 
-.voting-card__buttons > .icon-button > img {
+.list-view .voting-card__buttons > .icon-button > img {
     max-width: 1rem;
 }
 
-.vote-button {
+.list-view .vote-button {
     background-color: rgba(0,0,0,0.7);
     color: var(--color-white);
     border-color: var(--color-white);
@@ -215,25 +177,24 @@ select {
     padding: 0;
 }
 
-.gauge-bar {
+.list-view .gauge-bar {
+    margin-top: 2.7rem;
     display: flex;
-    margin: auto;
     opacity: 0.9;
-    margin-top: 0.7rem;
 }
 
-.gauge-bar-left {
+.list-view .gauge-bar-left {
     width: 50%;
     height: 2.5rem;
     display: flex;
 }
 
-.gauge-bar-left img {
+.list-view .gauge-bar-left img {
     max-width: 1.25rem;
     margin: 0.5rem 0rem 0.5rem 0.5rem;
 }
 
-.gauge-bar-left h4 {
+.list-view .gauge-bar-left h4 {
     margin: 0.4rem;
     color: var(--color-white);
     font-size: 1.5rem;
@@ -244,14 +205,14 @@ select {
 
 }
 
-.gauge-bar-right {
+.list-view .gauge-bar-right {
     width: 50%;
     height: 2.5rem;
     display: flex;
     gap: 2
 }
 
-.gauge-bar-right h4 {
+.list-view .gauge-bar-right h4 {
     margin: 0.4rem;
     color: var(--color-white);
     font-size: 1.5rem;
@@ -260,15 +221,15 @@ select {
     margin-left: 7.2rem;
 }
 
-.gauge-bar-right img {
+.list-view .gauge-bar-right img {
     max-width: 1.25rem;
     margin: 0rem 0rem 0rem 0rem;
 }
 
-.gauge-bar-left[aria-label="thumbs up"] {
+.list-view .gauge-bar-left[aria-label="thumbs up"] {
     background-color: rgba(var(--color-green-positive), .8);
 }
 
-.gauge-bar-right[aria-label="thumbs down"] {
+.list-view .gauge-bar-right[aria-label="thumbs down"] {
     background-color: rgba(var(--color-yellow-negative), .8);
 }
