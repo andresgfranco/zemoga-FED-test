@@ -69,7 +69,9 @@ select {
     height: 350px;
     padding: 0;
     background:
-        1vw 0/30vw no-repeat url('../assets/img/kanye@2x.png');
+        1vw 0/30vw
+    linear-gradient(transparent 0%, transparent 0%, transparent 0%, #3a3b3c 100%),
+    no-repeat url('../assets/img/kanye@2x.png');
     background-position: center;
     background-size: 20em;
     background-position-y: 0%;
@@ -83,7 +85,9 @@ select {
     height: 350px;
     padding: 0;
     background:
-        1vw 0/30vw no-repeat url('../assets/img/mark@2x.png');
+        1vw 0/30vw
+    linear-gradient(transparent 0%, transparent 0%, transparent 0%, #3a3b3c 100%),
+    no-repeat url('../assets/img/mark@2x.png');
     background-position: center;
     background-size: 20em;
     background-position-y: 0%;
@@ -97,7 +101,9 @@ select {
     height: 350px;
     padding: 0;
     background:
-        1vw 0/30vw no-repeat url('../assets/img/cristina@2x.png');
+        1vw 0/30vw
+    linear-gradient(transparent 0%, transparent 0%, transparent 0%, #3a3b3c 100%),
+    no-repeat url('../assets/img/cristina@2x.png');
     background-position: center;
     background-size: 20em;
     background-position-y: 0%;
@@ -111,7 +117,9 @@ select {
     height: 350px;
     padding: 0;
     background:
-        0vw 0/30vw no-repeat url('../assets/img/malala@2x.png');
+        0vw 0/30vw
+    linear-gradient(transparent 0%, transparent 0%, transparent 0%, #3a3b3c 100%),
+    no-repeat url('../assets/img/malala@2x.png');
     background-position: center;
     background-size: 20em;
     background-position-y: 0%;
@@ -125,7 +133,9 @@ select {
     height: 350px;
     padding: 0;
     background:
-        1vw 0/30vw no-repeat url('../assets/img/elon@2x.png');
+        1vw 0/30vw
+    linear-gradient(transparent 0%, transparent 0%, transparent 0%, #3a3b3c 100%),
+    no-repeat url('../assets/img/elon@2x.png');
     background-position: center;
     background-size: 20em;
     background-position-y: 0%;
@@ -139,7 +149,9 @@ select {
     height: 350px;
     padding: 0;
     background:
-        1vw 0/30vw no-repeat url('../assets/img/greta@2x.png');
+        1vw 0/30vw
+    linear-gradient(transparent 0%, transparent 0%, transparent 0%, #3a3b3c 100%),
+    no-repeat url('../assets/img/greta@2x.png');
     background-position: center;
     background-size: 20em;
     background-position-y: 0%;
