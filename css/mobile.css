@@ -236,7 +236,7 @@ main h3 {
 
 }
 
-.gauge-bar-right {
+.gauge-bar-right {z
     width: 50%;
     height: 2.6rem;
     display: flex;
@@ -248,7 +248,7 @@ main h3 {
     font-size: 1.5rem;
     padding: 0px;
     font-weight: 400;
-    margin-left: 7.9rem;
+    margin-left: 0.5rem;
 }
 
 .gauge-bar-right img {

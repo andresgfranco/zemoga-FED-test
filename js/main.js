@@ -1,5 +1,4 @@
-
-// View functions
+// View selection functions
 function listView() {
   document.getElementsByClassName("grid-view")[0].style.display = "none";
   document.getElementsByClassName("list-view")[0].style.display = "block";
@@ -19,7 +18,113 @@ window.addEventListener("resize", function(){
 });
 
 
-// Voting buttons functions - grid view
+var userSelection;
+
+// Data persistance
+if (sessionStorage.length == 0) {
+  sessionStorage.setItem("kanye-positive", 23);
+  sessionStorage.setItem("kanye-negative", 36);
+  sessionStorage.setItem("mark-positive", 418);
+  sessionStorage.setItem("mark-negative", 324);
+  sessionStorage.setItem("cristina-positive", 45);
+  sessionStorage.setItem("cristina-negative", 97);
+  sessionStorage.setItem("malala-positive", 18);
+  sessionStorage.setItem("malala-negative", 3);
+  sessionStorage.setItem("elon-positive", 1237);
+  sessionStorage.setItem("elon-negative", 894);
+  sessionStorage.setItem("greta-positive", 118);
+  sessionStorage.setItem("greta-negative", 45);
+}
+
+
+gaugeBarUdpate("kanye");
+gaugeBarUdpate("mark");
+gaugeBarUdpate("cristina");
+gaugeBarUdpate("malala");
+gaugeBarUdpate("elon");
+gaugeBarUdpate("greta");
+
+// Gauge bar values
+
+function positiveVote(character) {
+  let updatedPositiveNumber = parseInt(sessionStorage.getItem(character.concat("-positive")));
+
+  updatedPositiveNumber = updatedPositiveNumber + 1;
+  sessionStorage.setItem(character.concat("-positive"), updatedPositiveNumber);
+
+  gaugeBarUdpate(character);
+}
+
+function negativeVote(character) {
+  let updatedNegativeNumber = parseInt(sessionStorage.getItem(character.concat("-negative")));
+
+  updatedNegativeNumber = updatedNegativeNumber + 1;
+  sessionStorage.setItem(character.concat("-negative"), updatedNegativeNumber);
+
+  gaugeBarUdpate(character);
+
+}
+
+function gaugeBarUdpate(character) {
+
+  let positiveVotes = parseInt(sessionStorage.getItem(character.concat("-positive")));
+  let negativeVotes = parseInt(sessionStorage.getItem(character.concat("-negative")));
+  let totalVotes = positiveVotes + negativeVotes;
+
+  let positiveVotesPercentage = (positiveVotes * 100) / totalVotes;
+  let negativeVotesPercentage = (negativeVotes * 100) / totalVotes;
+  positiveVotesPercentage = positiveVotesPercentage.toFixed();
+  negativeVotesPercentage = negativeVotesPercentage.toFixed();
+
+  let leftHeadingId = character.concat("-left-h4");
+  let rightHeadingId = character.concat("-right-h4");
+  let leftHeadingPercentage = positiveVotesPercentage.toString();
+  let rightHeadingPercentage = negativeVotesPercentage.toString();
+
+  document.getElementsByClassName(leftHeadingId)[0].textContent = leftHeadingPercentage.concat("%");
+  document.getElementsByClassName(leftHeadingId)[1].textContent = leftHeadingPercentage.concat("%");
+  document.getElementsByClassName(rightHeadingId)[0].textContent = rightHeadingPercentage.concat("%");
+  document.getElementsByClassName(rightHeadingId)[1].textContent = rightHeadingPercentage.concat("%");
+
+  document.getElementsByClassName(character.concat("-gauge-bar-left"))[0].style.width = leftHeadingPercentage.concat("%");
+  document.getElementsByClassName(character.concat("-gauge-bar-left"))[1].style.width = leftHeadingPercentage.concat("%");
+  document.getElementsByClassName(character.concat("-gauge-bar-right"))[0].style.width = rightHeadingPercentage.concat("%");
+  document.getElementsByClassName(character.concat("-gauge-bar-right"))[1].style.width = rightHeadingPercentage.concat("%");
+
+  if (positiveVotesPercentage > negativeVotesPercentage) {
+    singleIconUpdate(character, "positive");
+  } else {
+    singleIconUpdate(character, "negative")
+  };
+}
+
+
+
+function singleIconUpdate(character, result) {
+  let singleIcon = character.concat("-single-icon");
+  let singleImgId = character.concat("-single-img");
+  let singleImgIdList = character.concat("-single-img-list");
+  let imgPathDown = "assets/img/thumbs-down.svg";
+  let imgPathUp = "assets/img/thumbs-up.svg";
+
+  if (result == "negative") {
+    document.getElementsByClassName(singleIcon)[0].ariaLabel = "thumbs down";
+    document.getElementsByClassName(singleIcon)[1].ariaLabel = "thumbs down";
+
+    document.getElementById(singleImgId).src = imgPathDown;
+    document.getElementById(singleImgIdList).src = imgPathDown;
+  } else {
+    document.getElementsByClassName(singleIcon)[0].ariaLabel = "thumbs up";
+    document.getElementsByClassName(singleIcon)[1].ariaLabel = "thumbs up";
+
+    document.getElementById(singleImgId).src = imgPathUp;
+    document.getElementById(singleImgIdList).src = imgPathUp;
+  }
+
+}
+
+// Voting buttons functions
+
 function preVote(idButton) {
   let selectedButton = document.getElementById(idButton)
   let nextSibling = selectedButton.nextElementSibling;
@@ -31,6 +136,7 @@ function preVote(idButton) {
   nextSibling.style.border = "0px";
 
   if (idButton.includes("do")) {
+    userSelection = -1;
     previousSibling.style.border = "0px";
     voteButton = (idButton.replace("do-", ""));
     listViewButton = "list-do-".concat(voteButton);
@@ -38,6 +144,7 @@ function preVote(idButton) {
     voteButton = voteButton.concat("-vote");
   };
   if (idButton.includes("up")) {
+    userSelection = 1;
     voteButton = (idButton.replace("up-", ""));
     listViewButton = "list-up-".concat(voteButton);
     document.getElementById(listViewButton).click();
@@ -58,6 +165,12 @@ function vote(idVote) {
   let timeStampId = character.concat("-voting-card__time-info");
   let thanksVote = character.concat("-thanks-for-your-vote");
   let listViewButton = character.concat("-vote-list");
+
+  if (userSelection == 1) {
+    positiveVote(character);
+  } else {
+    negativeVote(character);
+  }
 
   document.getElementById(doButtonId).style.display = "none";
   document.getElementById(upButtonId).style.display = "none";
@@ -86,7 +199,6 @@ function vote(idVote) {
     document.getElementById(thanksVote).style.marginLeft = "11rem";
     document.getElementById(voteAgainId).style.marginLeft = "3rem";
   }
-
 
 }
 
@@ -123,6 +235,7 @@ function preVoteListView(idButton) {
   nextSibling.style.border = "0px";
 
   if (idButton.includes("do")) {
+    userSelection = -1;
     previousSibling.style.border = "0px";
     voteButton = (idButton.replace("list-do-", ""));
     gridViewButton = "do-".concat(voteButton);
@@ -137,6 +250,7 @@ function preVoteListView(idButton) {
   };
 
   if (idButton.includes("up")) {
+    userSelection = 1;
     voteButton = (idButton.replace("list-up-", ""));
     gridViewButton = "up-".concat(voteButton);
     document.getElementById(gridViewButton).click();
@@ -179,7 +293,6 @@ function voteListView(idVote) {
 
 
 }
-
 
 function voteAgainListView(idVoteAgain) {
   let character = (idVoteAgain.replace("-vote-again-list", ""))
