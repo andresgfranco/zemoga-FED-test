@@ -5,8 +5,7 @@ The approach for this project was using HTML, CSS and JS vanilla. The idea of cr
 
 
 # How to use it
-- Clone this GitHub repository into your VM or OS with https://github.com/andresgfranco/zemoga-FED-test.git
-`git clone https://github.com/andresgfranco/zemoga-FED-test.git`
+- Clone this GitHub repository into your VM or OS with `git clone https://github.com/andresgfranco/zemoga-FED-test.git`
 - Since there is no need to run or start an app feel free to open the directory where you clone the repo and open the index.html file directly with your preferred browser: Chrome, Edge, Firefox, Opera Safari, WebView Android, Chrome Android, Firefox for Android, Opera Android, Safari on iOS, Samsung Internet, among others.
 - Before open it, if you are using VS Code, feel free to download "Live Server", which is a plugin where you can launch a development local server with live reload feature for statuc & dynamic pages plugin https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer and open the index.html by using it.
 
