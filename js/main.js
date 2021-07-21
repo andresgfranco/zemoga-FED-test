@@ -13,6 +13,9 @@ window.addEventListener("resize", function(){
   if (document.documentElement.clientWidth < 768) {
     gridView();
   }
+  if (document.documentElement.clientWidth > 768) {
+
+  }
 });
 
 
@@ -114,6 +117,7 @@ function preVoteListView(idButton) {
   let previousSibling = selectedButton.previousElementSibling;
   let gridViewButton;
   let voteButton;
+  let gaugeBar;
 
   selectedButton.style.border = "2px solid white";
   nextSibling.style.border = "0px";
@@ -123,6 +127,12 @@ function preVoteListView(idButton) {
     voteButton = (idButton.replace("list-do-", ""));
     gridViewButton = "do-".concat(voteButton);
     document.getElementById(gridViewButton).click();
+    gaugeBar = voteButton.concat("-list-gauge-bar");
+    if (document.documentElement.clientWidth >= 1100) {
+      document.getElementById(gaugeBar).style.marginTop = "0.65rem";
+    } else {
+      document.getElementById(gaugeBar).style.marginTop = "-0.7rem";
+    };
     voteButton = voteButton.concat("-vote-list");
   };
 
@@ -130,6 +140,12 @@ function preVoteListView(idButton) {
     voteButton = (idButton.replace("list-up-", ""));
     gridViewButton = "up-".concat(voteButton);
     document.getElementById(gridViewButton).click();
+    gaugeBar = voteButton.concat("-list-gauge-bar");
+    if (document.documentElement.clientWidth >= 1100) {
+      document.getElementById(gaugeBar).style.marginTop = "0.65rem";
+    } else {
+      document.getElementById(gaugeBar).style.marginTop = "-0.7rem";
+    };
     voteButton = voteButton.concat("-vote-list");
   };
 
@@ -161,14 +177,6 @@ function voteListView(idVote) {
 
   document.getElementById(gridViewButton).click();
 
-  if (document.documentElement.clientWidth > 767) {
-    document.getElementById(thanksVote).style.marginLeft = "14rem";
-    document.getElementById(voteAgainId).style.marginLeft = "6rem";
-  }
-  if (document.documentElement.clientWidth > 1100) {
-    document.getElementById(thanksVote).style.marginLeft = "9rem";
-    document.getElementById(voteAgainId).style.marginLeft = "12rem";
-  }
 
 }
 
@@ -186,6 +194,12 @@ function voteAgainListView(idVoteAgain) {
   document.getElementById(upButtonId).style.display = "block";
   document.getElementById(doButtonId).style.display = "block";
   document.getElementById(vote).style.display = "block";
+
+  if (document.documentElement.clientWidth >= 1100) {
+    document.getElementById(gaugeBar).style.marginTop = "1.67rem";
+  } else {
+    document.getElementById(gaugeBar).style.marginTop = "-0.7rem";
+  };
 
   document.getElementById(idVoteAgain).style.display = "none";
   document.getElementById(timeStampId).style.display = "block";
