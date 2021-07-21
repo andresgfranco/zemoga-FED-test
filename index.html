@@ -126,7 +126,7 @@
                 <!-- Cards container -->
                 <div class="grid-view">
                     <section class="previous-rulings-main-container">
-                        <!-- Cards -->
+                    <!-- Cards -->
                         <!-- Kanye West -->
                         <div id="kanye" class="previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
@@ -441,7 +441,7 @@
                 </div>
                 <div class="list-view">
                     <section class="list-previous-rulings-main-container">
-                        <!-- Cards -->
+                    <!-- Cards -->
                         <!-- Kanye West -->
                         <div id="kanye_list" class="list-previous-rulings__voting-card">
                             <div class="voting-card__background"></div>
@@ -460,24 +460,31 @@
                                 </div>
                                 <!-- Voting buttons -->
                                 <div class="list-voting-card__time-buttons">
-                                    <p class="list-voting-card__time-info">
+                                    <p id="kanye-voting-card__time-info-list" class="list-voting-card__time-info">
                                         1 month ago in Entertainment
                                     </p>
+                                    <p id="kanye-thanks-for-your-vote-list" class="list-voting-card__time-info" style="display: none;">
+                                        Thanks for your vote!
+                                    </p>
                                     <div class="list-voting-card__buttons">
-                                        <button class="list-icon-button" aria-label="thumbs up">
+                                        <button id="list-up-kanye" onclick="preVoteListView(this.id)" class="list-icon-button" aria-label="thumbs up">
                                             <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                         </button>
-                                        <button class="list-icon-button" aria-label="thumbs down">
+                                        <button id="list-do-kanye" onclick="preVoteListView(this.id)" class="list-icon-button" aria-label="thumbs down">
                                             <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                         </button>
-                                        <button class="list-vote-button" aria-label="Vote now">
+                                        <button id="kanye-vote-list" onclick="voteListView(this.id)" class="list-vote-button" aria-label="Vote now" type="button" disabled>
                                             Vote now
+                                        </button>
+                                        <button id="kanye-vote-again-list" onclick="voteAgainListView(this.id)" style="display: none; margin-left: 7rem;" class="list-vote-button"
+                                            aria-label="Vote now">
+                                            Vote again
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <!-- Gauge bar -->
-                            <div class="list-gauge-bar">
+                            <div id="kanye-list-gauge-bar" class="list-gauge-bar">
                                 <div class="list-gauge-bar-left" aria-label="thumbs up">
                                     <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                     <h4>50%</h4>
@@ -506,18 +513,28 @@
                                 </div>
                                 <!-- Voting buttons -->
                                 <div class="list-voting-card__time-buttons">
-                                    <p class="list-voting-card__time-info">
+                                    <p id="mark-voting-card__time-info-list" class="list-voting-card__time-info">
                                         1 month ago in Entertainment
                                     </p>
+                                    <p id="mark-thanks-for-your-vote-list" class="list-voting-card__time-info" style="display: none;">
+                                        Thanks for your vote!
+                                    </p>
                                     <div class="list-voting-card__buttons">
-                                        <button class="list-icon-button" aria-label="thumbs up">
+                                        <button id="list-up-mark" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs up">
                                             <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                         </button>
-                                        <button class="list-icon-button" aria-label="thumbs down">
+                                        <button id="list-do-mark" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs down">
                                             <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                         </button>
-                                        <button class="list-vote-button" aria-label="Vote now">
+                                        <button id="mark-vote-list" onclick="voteListView(this.id)" class="list-vote-button"
+                                            aria-label="Vote now" type="button" disabled>
                                             Vote now
+                                        </button>
+                                        <button id="mark-vote-again-list" onclick="voteAgainListView(this.id)"
+                                            style="display: none; margin-left: 7rem;" class="list-vote-button" aria-label="Vote now">
+                                            Vote again
                                         </button>
                                     </div>
                                 </div>
@@ -545,25 +562,35 @@
                                 </div>
                                 <!-- Title and description -->
                                 <div class="list-voting-card__title">
-                                    <h3>Cristina Fernández</h3>
+                                    <h3>Cristina Fernandez</h3>
                                     <p class="list-voting-card__desc">
                                         Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…
                                     </p>
                                 </div>
                                 <!-- Voting buttons -->
                                 <div class="list-voting-card__time-buttons">
-                                    <p class="list-voting-card__time-info">
+                                    <p id="cristina-voting-card__time-info-list" class="list-voting-card__time-info">
                                         1 month ago in Entertainment
                                     </p>
+                                    <p id="cristina-thanks-for-your-vote-list" class="list-voting-card__time-info" style="display: none;">
+                                        Thanks for your vote!
+                                    </p>
                                     <div class="list-voting-card__buttons">
-                                        <button class="list-icon-button" aria-label="thumbs up">
+                                        <button id="list-up-cristina" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs up">
                                             <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                         </button>
-                                        <button class="list-icon-button" aria-label="thumbs down">
+                                        <button id="list-do-cristina" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs down">
                                             <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                         </button>
-                                        <button class="list-vote-button" aria-label="Vote now">
+                                        <button id="cristina-vote-list" onclick="voteListView(this.id)" class="list-vote-button"
+                                            aria-label="Vote now" type="button" disabled>
                                             Vote now
+                                        </button>
+                                        <button id="cristina-vote-again-list" onclick="voteAgainListView(this.id)"
+                                            style="display: none; margin-left: 7rem;" class="list-vote-button" aria-label="Vote now">
+                                            Vote again
                                         </button>
                                     </div>
                                 </div>
@@ -598,18 +625,28 @@
                                 </div>
                                 <!-- Voting buttons -->
                                 <div class="list-voting-card__time-buttons">
-                                    <p class="list-voting-card__time-info">
+                                    <p id="malala-voting-card__time-info-list" class="list-voting-card__time-info">
                                         1 month ago in Entertainment
                                     </p>
+                                    <p id="malala-thanks-for-your-vote-list" class="list-voting-card__time-info" style="display: none;">
+                                        Thanks for your vote!
+                                    </p>
                                     <div class="list-voting-card__buttons">
-                                        <button class="list-icon-button" aria-label="thumbs up">
+                                        <button id="list-up-malala" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs up">
                                             <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                         </button>
-                                        <button class="list-icon-button" aria-label="thumbs down">
+                                        <button id="list-do-malala" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs down">
                                             <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                         </button>
-                                        <button class="list-vote-button" aria-label="Vote now">
+                                        <button id="malala-vote-list" onclick="voteListView(this.id)" class="list-vote-button"
+                                            aria-label="Vote now" type="button" disabled>
                                             Vote now
+                                        </button>
+                                        <button id="malala-vote-again-list" onclick="voteAgainListView(this.id)"
+                                            style="display: none; margin-left: 7rem;" class="list-vote-button" aria-label="Vote now">
+                                            Vote again
                                         </button>
                                     </div>
                                 </div>
@@ -644,18 +681,28 @@
                                 </div>
                                 <!-- Voting buttons -->
                                 <div class="list-voting-card__time-buttons">
-                                    <p class="list-voting-card__time-info">
+                                    <p id="elon-voting-card__time-info-list" class="list-voting-card__time-info">
                                         1 month ago in Entertainment
                                     </p>
+                                    <p id="elon-thanks-for-your-vote-list" class="list-voting-card__time-info" style="display: none;">
+                                        Thanks for your vote!
+                                    </p>
                                     <div class="list-voting-card__buttons">
-                                        <button class="list-icon-button" aria-label="thumbs up">
+                                        <button id="list-up-elon" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs up">
                                             <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                         </button>
-                                        <button class="list-icon-button" aria-label="thumbs down">
+                                        <button id="list-do-elon" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs down">
                                             <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                         </button>
-                                        <button class="list-vote-button" aria-label="Vote now">
+                                        <button id="elon-vote-list" onclick="voteListView(this.id)" class="list-vote-button"
+                                            aria-label="Vote now" type="button" disabled>
                                             Vote now
+                                        </button>
+                                        <button id="elon-vote-again-list" onclick="voteAgainListView(this.id)"
+                                            style="display: none; margin-left: 7rem;" class="list-vote-button" aria-label="Vote now">
+                                            Vote again
                                         </button>
                                     </div>
                                 </div>
@@ -690,18 +737,28 @@
                                 </div>
                                 <!-- Voting buttons -->
                                 <div class="list-voting-card__time-buttons">
-                                    <p class="list-voting-card__time-info">
+                                    <p id="greta-voting-card__time-info-list" class="list-voting-card__time-info">
                                         1 month ago in Entertainment
                                     </p>
+                                    <p id="greta-thanks-for-your-vote-list" class="list-voting-card__time-info" style="display: none;">
+                                        Thanks for your vote!
+                                    </p>
                                     <div class="list-voting-card__buttons">
-                                        <button class="list-icon-button" aria-label="thumbs up">
+                                        <button id="list-up-greta" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs up">
                                             <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
                                         </button>
-                                        <button class="list-icon-button" aria-label="thumbs down">
+                                        <button id="list-do-greta" onclick="preVoteListView(this.id)" class="list-icon-button"
+                                            aria-label="thumbs down">
                                             <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
                                         </button>
-                                        <button class="list-vote-button" aria-label="Vote now">
+                                        <button id="greta-vote-list" onclick="voteListView(this.id)" class="list-vote-button"
+                                            aria-label="Vote now" type="button" disabled>
                                             Vote now
+                                        </button>
+                                        <button id="greta-vote-again-list" onclick="voteAgainListView(this.id)"
+                                            style="display: none; margin-left: 7rem;" class="list-vote-button" aria-label="Vote now">
+                                            Vote again
                                         </button>
                                     </div>
                                 </div>
