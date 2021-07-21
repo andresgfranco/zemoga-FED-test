@@ -22,5 +22,3 @@ The approach for this project was using HTML, CSS and JS vanilla. The idea of cr
 
 # Authors
 - Andres Gonzalez Franco - http://twitter.com/andresgfranco - https://www.linkedin.com/feed/
-
-### End of README.md file
