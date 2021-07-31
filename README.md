@@ -18,7 +18,7 @@ The approach for this project was using HTML, CSS and JS vanilla. The idea of cr
 - `js:` main javascript file containing the functions that manipulates the DOM.
 
 # Bugs
-- In mobile size, the single thumb icon background indicating which vote(positive or negative) is winning per candidate is stucked in yellow no matter the result. Currently working on it.
+- In mobile size, the single thumb icon background indicating which vote(positive or negative) is winning per candidate is stucked in yellow no matter the result.
 
 # Authors
 - Andres Gonzalez Franco - http://twitter.com/andresgfranco - https://www.linkedin.com/feed/
